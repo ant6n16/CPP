@@ -6,14 +6,14 @@
 #    By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 12:57:09 by antdelga          #+#    #+#              #
-#    Updated: 2024/04/22 18:26:42 by antdelga         ###   ########.fr        #
+#    Updated: 2024/04/27 14:24:22 by antdelga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = Numbers
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 CC = g++
-SRC = megaphone.cpp
+SRC = Fixed.cpp main.cpp
 OBJS := $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 09:53:04 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/22 18:24:16 by antdelga         ###   ########.fr       */
+/*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
+/*   Updated: 2024/04/27 19:43:02 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc > 1)
-    {
-        for (int i = 1; i < argc; i++)
-        {
-            for (int j = 0; argv[i][j] != '\0'; j++)
-                std::cout << (char) std::toupper(argv[i][j]);
-        }
-        std::cout << std::endl;
-    }
-    else
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    ClapTrap claptrap("ClapTrap");
+    ClapTrap claptrap2(claptrap);
+
+    claptrap.attack("target");
+    claptrap.takeDamage(5);
+    claptrap.beRepaired(3);
+
+    claptrap2.attack("target");
+    claptrap2.takeDamage(5);
+    claptrap2.beRepaired(3);
+
     return (0);
 }
