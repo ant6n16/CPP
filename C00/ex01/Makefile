@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+         #
+#    By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 12:57:09 by antdelga          #+#    #+#              #
-#    Updated: 2024/04/22 18:38:21 by antdelga         ###   ########.fr        #
+#    Updated: 2024/07/03 19:43:02 by antdelga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-CC = g++
-SRC = PhoneBook.cpp Contact.cpp main.cpp
+CC = c++
+SRC = PhoneBook.cpp Contact.cpp main.cpp 
 OBJS := $(SRC:.cpp=.o)
 
 all: $(NAME)

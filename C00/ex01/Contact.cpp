@@ -3,63 +3,93 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:50:19 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/23 18:50:24 by antdelga         ###   ########.fr       */
+/*   Created: 2024/07/03 19:27:12 by antdelga          #+#    #+#             */
+/*   Updated: 2024/07/03 20:16:44 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-/* ----------------- CONSTRUCTOR AND DESTRUCTOR ----------------- */
 Contact::Contact()
 {
 }
+
 Contact::~Contact()
 {
 }
 
-/* ----------------- GET FUNCTIONS ----------------- */
-std::string Contact::getFirstName()
+void Contact::setIndex(int i)
 {
-    return (_first_name);
-}
-std::string Contact::getLastName()
-{
-    return (_last_name);
-}
-std::string Contact::getNickname()
-{
-    return (_nickname);
-}
-std::string Contact::getPhone()
-{
-    return (_phone);
-}
-std::string Contact::getDarkestSecret()
-{
-    return (_darkest_secret);
+	this->index = i;
 }
 
-/* ----------------- SET FUNCTIONS ----------------- */
-void Contact::setFirstName(std::string first_name)
+std::string Contact::addInfo(std::string msg)
 {
-    _first_name = first_name;
+	bool checker = false;
+	std::string field;
+	
+	while (!checker){
+		std::cout << msg;
+		std::getline(std::cin, field);
+		if (!field.empty())
+			checker = true;
+		else
+		{
+			std::cin.clear();
+			std::cout << "Please, enter a valid value. The field cannot be empty" << std::endl;
+		}
+	}
+	return field;
 }
-void Contact::setLastName(std::string last_name)
+
+void Contact::setValues(void)
 {
-    _last_name = last_name;
+	std::cin.ignore();
+	this->firstName = addInfo("Enter the FIRST NAME: ");
+	this->lastName = addInfo ("Enter the LAST NAME: ");
+	this->nickName = addInfo("Enter the NICKNAME: ");
+	this->phoneNumber = addInfo ("Enter the PHONE NUMBER: ");
+	this->darkSecret = addInfo ("Enter the DARKEST SECRET: ");
+	std::cout << "\n";
+	std::cout << "Contact created! " << std::endl << std::endl;
 }
-void Contact::setNickname(std::string nickname)
+
+std::string Contact::cropValue(std::string field)
 {
-    _nickname = nickname;
+	std::string result;
+	int i = 0;
+
+	while (field[i])
+	{
+		if (i == 9){
+			result.push_back('.');
+			break;
+		}
+		result.push_back(field[i]);
+		i++;
+	}
+	return (result);
 }
-void Contact::setPhone(std::string phone)
+
+void Contact::print(void)
 {
-    _phone = phone;
+	if (this->firstName.empty())
+		return ;
+	std::cout << "|" << std::setw(10) << this->index << std::flush;
+	std::cout << "|" << std::setw(10) << this->cropValue(this->firstName) << std::flush;
+	std::cout << "|" << std::setw(10) << this->cropValue(this->lastName) << std::flush;
+	std::cout << "|" << std::setw(10) << this->cropValue(this->nickName) << std::flush;
+	std::cout << "|" << std::endl;
 }
-void Contact::setDarkestSecret(std::string darkest_secret)
+
+void Contact::displayContact(void)
 {
-    _darkest_secret = darkest_secret;
+    std::cout << "Index:  " << this->index <<  std::endl;
+    std::cout << "First Name:  " << this->firstName <<  std::endl;
+    std::cout << "Last Name:  " << this->lastName <<  std::endl;
+    std::cout << "Nickname:  " << this->nickName <<  std::endl;
+    std::cout << "Phone Number:  " << this->phoneNumber <<  std::endl;
+    std::cout << "Darkest Secret:  " << this->darkSecret <<  std::endl << std::endl;
 }

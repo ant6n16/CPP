@@ -3,73 +3,98 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 18:17:02 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/23 19:45:43 by antdelga         ###   ########.fr       */
+/*   Created: 2024/07/03 19:29:32 by antdelga          #+#    #+#             */
+/*   Updated: 2024/07/03 20:33:40 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook()
 {
-    _index = 0;
+	this->index = 0;
+	this->full = false;
 }
 
 PhoneBook::~PhoneBook()
 {
 }
 
-void    PhoneBook::add_contact(Contact contact)
+void PhoneBook::add(void)
 {
-    _contactos[_index % 8] = contact;
-    _index++;
+	Contact newContact = Contact();
+	newContact.setValues();
+	newContact.setIndex(this->index);
+	this->contacts[this->index] = newContact;
+	if (this->index < 7)
+		this->index++;
+ 	else
+	{
+		this->index = 0;
+		this->full = true;
+	}
 }
 
-std::string PhoneBook::truncateString(const std::string str)
+void PhoneBook::showContacts(void)
 {
-    if (str.length() > 10)
-    {
-        return str.substr(0, 9) + ".";
-    }
-    return str;
+	int	size;
+
+	std::cout << " -------------------------------------------" << std::endl;
+	std::cout << " " << std::setw(10) << std::left << "Index" << std::flush;
+	std::cout << " "<< std::setw(10) << std::left << "FirstName" << std::flush;
+	std::cout << " "<< std::setw(10) << std::left << "LastName" << std::flush;
+	std::cout << " "<< std::setw(10) << std::left << "NickName" << std::flush;
+	std::cout << " " << std::endl;
+	std::cout << " -------------------------------------------" << std::endl;
+	if (this->full)
+		size = 7;
+	else
+		size = this->index;
+	for(int i = 0; i <= size; i++){
+		this->contacts[i].print();
+	}
+	std::cout << std::endl << std::endl;
 }
 
-void PhoneBook::search_contact(void)
+int	PhoneBook::checkIndex(int size)
 {
-    int index = _index % 8;
-    int loc;
-    
-    if (index == 0)
-    {
-        std::cout << "Your phonebook is empty." << std::endl << std::endl;
-        return;
-    }
-    std::cout << std::setw(10) << "Index" << "|";
-    std::cout << std::setw(10) << "First Name" << "|";
-    std::cout << std::setw(10) << "Last Name" << "|";
-    std::cout << std::setw(10) << "Nickname" << "|" << std::endl;
-    for (int i = 0; (i < index); i++)
-    {
-        std::cout << std::setw(10) << i << "|";
-        std::cout << std::setw(10) << truncateString(_contactos[i].getFirstName()) << "|";
-        std::cout << std::setw(10) << truncateString(_contactos[i].getLastName()) << "|";
-        std::cout << std::setw(10) << truncateString(_contactos[i].getNickname()) << "|" << std::endl;
-    }
-    std::cout << "Enter the index of the entry to display: ";
-    if (!(std::cin >> loc) || loc < 0 || loc >= index) 
-        std::cout << "Invalid input. Please enter a valid number." << std::endl;
-    else
-    {
-        std::cout << "First Name: " << _contactos[loc].getFirstName() << std::endl;
-        std::cout << "Last Name: " << _contactos[loc].getLastName() << std::endl;
-        std::cout << "Nickname: " << _contactos[loc].getNickname() << std::endl;
-        std::cout << "Phone Number: " << _contactos[loc].getPhone() << std::endl;
-        std::cout << "Darkest Secret: " << _contactos[loc].getDarkestSecret() << std::endl;
-    }
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	bool	checker;
+	int		index;
+		
+	checker = false;
+	while (!checker){
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Select the index of the contact to display: ";
+		std::cin >> index;
+		std::cout << std::endl;
+		if (index < 0 || index >= size || !std::cin.good())
+			std::cout << "The selected index is not correct.\n";
+		else
+			checker = true;
+	}
+	return index;
 }
 
+void PhoneBook::search(void)
+{
+	int		size;
+	int		i;
 
+	if (this->full)
+		size = 8;
+	else if (this->index == 0)
+		size = 0;
+	else
+		size = this->index;
+	showContacts();
+	if (size > 0)
+	{
+		i = checkIndex(size);
+		this->contacts[i].displayContact();
+	}
+	else
+		std::cout << "There are no contacts in Phonebook" << std::endl << std::endl;;
+}

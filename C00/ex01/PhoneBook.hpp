@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:52:19 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/23 19:46:29 by antdelga         ###   ########.fr       */
+/*   Created: 2024/07/03 19:29:48 by antdelga          #+#    #+#             */
+/*   Updated: 2024/07/03 20:23:18 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+# include <iostream>
+# include <iomanip>
+# include <limits>
+# include "Contact.hpp"
 
-#include "Contact.hpp"
-#include <iostream>
-#include <iomanip>
-
-class PhoneBook
+class PhoneBook 
 {
-    private:
-        Contact _contactos[8];
-        int     _index;
-        
-    public:
-        PhoneBook(void);
-        ~PhoneBook();
+	private:
+		Contact	contacts[8];
+		int		index;
+		bool	full;
+		void	showContacts();
+		int		checkIndex(int size);
 
-        void add_contact(Contact contact);
-        void search_contact(void);
-        std::string truncateString(const std::string str);
+	public:
+		PhoneBook();
+		~PhoneBook();
+
+		void	add();
+		void	search();
 };
 
 #endif

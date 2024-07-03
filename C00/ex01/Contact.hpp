@@ -3,46 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 18:38:44 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/23 18:50:23 by antdelga         ###   ########.fr       */
+/*   Created: 2024/07/03 19:29:12 by antdelga          #+#    #+#             */
+/*   Updated: 2024/07/03 20:23:27 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-# define CONTACT_HPP
-
+#define CONTACT_HPP
 # include <iostream>
-# include <string>
+# include <iomanip>
 
-class Contact
+class Contact 
 {
-    private:
-        std::string _first_name;
-        std::string _last_name;
-        std::string _nickname;
-        std::string _phone;
-        std::string _darkest_secret;
-    
-    public:
-        /* CONSTRUCTOR AND DESTRUCTOR*/
-        Contact(void);
-        ~Contact();
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickName;
+		std::string	phoneNumber;
+		std::string darkSecret;
+		int			index;
 
-        /* SET METHODS*/
-        void setFirstName(std::string first_name);
-        void setLastName(std::string last_name);
-        void setNickname(std::string nickname);
-        void setPhone(std::string phone);
-        void setDarkestSecret(std::string darkest_secret);
-
-        /* GET METHODS */
-        std::string getFirstName();
-        std::string getLastName();
-        std::string getNickname();
-        std::string getPhone();
-        std::string getDarkestSecret();
+        std::string addInfo(std::string msg);
+		std::string cropValue(std::string field);
+	
+	public:
+		Contact();
+		~Contact();
+		
+        void setIndex(const int i);
+        void setValues(void);
+		void print(void);
+		void displayContact(void);
 };
 
 #endif
