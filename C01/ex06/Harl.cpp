@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:35:45 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 13:54:54 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/07/04 20:39:27 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ int		Harl::level(std::string level)
 
     std::map<std::string, int>::iterator it = levelMap.find(level);
     if (it != levelMap.end()) 
-    {
         return (it->second);
-    }
     else
         return (-1);
 

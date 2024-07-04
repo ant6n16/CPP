@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:04:40 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 14:01:27 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/07/04 20:45:17 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,30 @@ int main(int argc, char **argv)
         case 0:
             std::cout << "[ DEBUG ]\n";
             harl.complain("DEBUG");
-            std::cout << '\n';
+            std::cout << std::endl;
+            [[fallthrough]];  // Fall through intentionally
+
         case 1:
             std::cout << "[ INFO ]\n";
             harl.complain("INFO");
-            std::cout << '\n';
+            std::cout << std::endl;
+            [[fallthrough]];  // Fall through intentionally
+
         case 2:
             std::cout << "[ WARNING ]\n";
             harl.complain("WARNING");
-            std::cout << '\n';
+            std::cout << std::endl;
+            [[fallthrough]];  // Fall through intentionally
+
         case 3:
             std::cout << "[ ERROR ]\n";
             harl.complain("ERROR");
-            std::cout << '\n';
+            std::cout << std::endl;
             break;
+            
         default:
             std::cout << "[Probably complaining about insignificant problems]\n";
-    }    
+    }
+
     return (0);
 }

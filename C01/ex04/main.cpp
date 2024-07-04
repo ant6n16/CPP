@@ -3,26 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:04:40 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 12:23:21 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/07/04 20:21:19 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-void    replace(std::string &read, std::string s1, std::string s2)
-
+void replace(std::string &read, const std::string &s1, const std::string &s2)
 {
-    size_t  pos = 0;
+    if (s1.empty())
+    {
+        return;
+    }
+    
+    std::string result;
+    size_t pos = 0;
+    size_t prev_pos = 0;
+    
     while ((pos = read.find(s1, pos)) != std::string::npos)
     {
-        read.replace(pos, s1.length(), s2);
-        pos += s2.length();
+        result.append(read, prev_pos, pos - prev_pos);
+        result += s2;
+        pos += s1.length();
+        prev_pos = pos;
     }
+    
+    result.append(read, prev_pos, std::string::npos);
+    read.swap(result);
 }
+
 
 int main(int argc, char **argv)
 {
@@ -37,7 +50,7 @@ int main(int argc, char **argv)
         std::cerr << "Error: Can't open file" << std::endl;
         return (1);
     }
-    std::ofstream outputFile(argv[1] + std::string(".replace"));
+    std::ofstream outputFile((std::string(argv[1]) + ".replace").c_str());
     if (!outputFile.is_open())
     {
         std::cerr << "Error: Can't create file" << std::endl;

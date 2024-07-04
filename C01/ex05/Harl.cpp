@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:35:45 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 13:18:25 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/07/04 20:34:58 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,7 @@ void Harl::complain(std::string level)
 
     std::map<std::string, void (Harl::*)()>::iterator it = functionMap.find(level);
     if (it != functionMap.end()) 
-    {
         (this->*(it->second))();
-    }
     else 
-    {
         std::cerr << "Error: Wrong level\n";
-    }
 }
