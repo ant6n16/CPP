@@ -3,55 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 19:04:40 by antdelga          #+#    #+#             */
-/*   Updated: 2024/07/04 20:45:17 by antdelga         ###   ########.fr       */
+/*   Created: 2024/07/05 12:12:10 by antdelga          #+#    #+#             */
+/*   Updated: 2024/07/05 12:35:16 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(int argc, char **argv)
+std::string ft_toupper(std::string str){
+	std::string upper = str;
+
+	for (int i = 0; str[i]; i++){
+		upper[i] = (char) toupper(str[i]);
+	}
+	return (upper);
+}
+
+int	main(int argc, char **argv)
 {
-    Harl    harl;
-    int     level;
-
-    if (argc != 2)
-    {
-        std::cout << "Error: Wrong number of arguments" << std::endl;
-        return (1);
-    }
-    level = harl.level(argv[1]);
-    switch (level)
-    {
-        case 0:
-            std::cout << "[ DEBUG ]\n";
-            harl.complain("DEBUG");
-            std::cout << std::endl;
-            [[fallthrough]];  // Fall through intentionally
-
-        case 1:
-            std::cout << "[ INFO ]\n";
-            harl.complain("INFO");
-            std::cout << std::endl;
-            [[fallthrough]];  // Fall through intentionally
-
-        case 2:
-            std::cout << "[ WARNING ]\n";
-            harl.complain("WARNING");
-            std::cout << std::endl;
-            [[fallthrough]];  // Fall through intentionally
-
-        case 3:
-            std::cout << "[ ERROR ]\n";
-            harl.complain("ERROR");
-            std::cout << std::endl;
-            break;
-            
-        default:
-            std::cout << "[Probably complaining about insignificant problems]\n";
-    }
-
-    return (0);
+	if (argc == 2)
+	{
+		Harl harl;
+		harl.filterLevel(ft_toupper(argv[1]));
+	}
+	else
+		std::cout << "You have pass a parameter: DEBUG, INFO, WARNING, ERROR" << std::endl;
+	return (0);
 }
