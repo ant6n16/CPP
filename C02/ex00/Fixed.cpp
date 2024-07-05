@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:11:42 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 14:41:53 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/07/05 12:52:51 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ Fixed::~Fixed()
     std::cout << "Destructor" << std::endl;
 }
 
-Fixed &Fixed::operator=(const Fixed &copy)
-{
-    std::cout << "Assignation operator" << std::endl;
-    this->_value = copy._value;
-    return (*this);
+Fixed &Fixed::operator=(const Fixed &other) {
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &other) {
+        this->_value = other.getRawBits();
+    }
+    return *this;
 }
 
 int Fixed::getRawBits(void) const

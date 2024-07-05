@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:06:41 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 14:06:52 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/07/05 12:43:47 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ class Fixed
 {
     public:
         Fixed();
-        Fixed(const Fixed &copy);
         ~Fixed();
-
+        Fixed(const Fixed &copy);
         Fixed &operator=(const Fixed &copy);
 
         int getRawBits(void) const;

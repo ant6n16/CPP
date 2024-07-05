@@ -6,13 +6,13 @@
 #    By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 12:57:09 by antdelga          #+#    #+#              #
-#    Updated: 2024/04/27 14:48:55 by antdelga         ###   ########.fr        #
+#    Updated: 2024/07/05 12:49:17 by antdelga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Numbers
+NAME = a.out
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-CC = g++
+CC = c++
 SRC = Fixed.cpp main.cpp
 OBJS := $(SRC:.cpp=.o)
 
