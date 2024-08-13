@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 12:12:14 by antdelga          #+#    #+#             */
-/*   Updated: 2024/07/05 12:32:50 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:38:18 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,6 @@
 # include <fstream>
 # include <map>
 
-//Colores
-# define GRAY		"\033[30;1m"
-# define RED		"\033[31;1m"
-# define GREEN		"\033[32;1m"
-# define YELLOW		"\033[33;1m"
-# define DEFAULT	"\033[0m"
-
-//Mensajes
 # define DEBUG		"[ DEBUG ]\nI love having extra bacon for my 7XL-double-cheese-triple-picklespecial-ketchup burger.\nI really do!\n"
 # define INFO		"[ INFO ]\nI cannot believe adding extra bacon costs more money.\nYou didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!\n"
 # define WARNING	"[ WARNING ]\nI think I deserve to have some extra bacon for free.\nI’ve been coming for years whereas you started working here since last month.\n"

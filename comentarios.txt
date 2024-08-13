@@ -1,0 +1,28 @@
+Revisar si hay que compilar con g++, con clang o con qué
+
+ex00: En el stack la memoria se libera cuando sales del contexto. En el heap se libera cuando 
+llamas al destructor. Tiene sus ventajas cada una. Cuando lo creas con new, se asigna la memoria
+dinámicamente y tienes que liberarlo tú.
+
+ex01: Revisar si los zombies tienen que llamarse todos iguales o no
+
+ex02: La referencia sirve para no copiar objetos grandes. Por ejemplo, para pasarlo por referencia
+a una función
+
+ex03: En HumanA, el Weapon es pasado y almacenado como una referencia porque HumanA asume que siempre tendrá un Weapon válido. 
+En HumanB, el Weapon se almacena como un puntero porque HumanB puede no tener un Weapon al principio y puede elegir un Weapon más 
+tarde mediante el método setWeapon. También permite que HumanB cambie su arma o no tenga ninguna.
+•	Referencia: Se utiliza cuando el Weapon es obligatorio y constante en la clase, es decir, la clase no puede operar sin él, y no habrá necesidad de cambiarlo o hacerlo opcional.
+•	Puntero: Se utiliza cuando el Weapon puede ser opcional, puede cambiar durante la vida del objeto, o si existe la posibilidad de que el objeto no tenga un Weapon en algún momento.
+
+ex04: npos es como el final de cadena, vale el máximo valor de un size_t. El swap es para aprovechar la referencia y no tener
+que devolver otro string
+
+ex05: it-second es para acceder a los valores; it-first para acceder a las claves. Es un mapeo entre strings
+y funciones
+
+
+
+
+
+

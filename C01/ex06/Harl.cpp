@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 12:12:19 by antdelga          #+#    #+#             */
-/*   Updated: 2024/07/05 12:32:48 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/13 19:35:11 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,42 +22,37 @@ Harl::~Harl()
 
 void	Harl::debug(void)
 {
-	std::cout << GREEN DEBUG DEFAULT;
+	std::cout << DEBUG << std::endl;
 }
 
 void	Harl::info(void)
 {
-	std::cout << GRAY INFO DEFAULT;
+	std::cout << INFO << std::endl;
 }
 
 void	Harl::warning(void)
 {
-	std::cout << YELLOW WARNING DEFAULT;
+	std::cout << WARNING << std::endl;
 }
 
 void	Harl::error(void)
 {
-	std::cout << RED ERROR DEFAULT;
+	std::cout << ERROR << std::endl;
 }
 
 void Harl::complain(std::string level)
 {
-    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*function[4])(void);
-    
-    function[0] = &Harl::debug;
-    function[1] = &Harl::info;
-    function[2] = &Harl::warning;
-    function[3] = &Harl::error;
+    std::map<std::string, void (Harl::*)()> functionMap;
+    functionMap["DEBUG"] = &Harl::debug;
+    functionMap["ERROR"] = &Harl::error;
+    functionMap["WARNING"] = &Harl::warning;
+    functionMap["INFO"] = &Harl::info;
 
-    for (int i = 0; i < 4; i++) 
-	{
-        if (levels[i] == level) 
-		{
-            (this->*function[i])();
-            break;
-        }
-    }
+    std::map<std::string, void (Harl::*)()>::iterator it = functionMap.find(level);
+    if (it != functionMap.end()) 
+        (this->*(it->second))();
+    else 
+        std::cerr << "Error: Wrong level\n";
 }
 
 void Harl::filterLevel(std::string levelFilter) 
@@ -85,8 +80,8 @@ void Harl::filterLevel(std::string levelFilter)
             this->complain("WARNING");
         case 3:
             this->complain("ERROR");
+            break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            break;
     }
 }
