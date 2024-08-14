@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:11:42 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 19:07:19 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:52:28 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,42 @@
 
 Fixed::Fixed()
 {
-    std::cout << "Original constructor" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
     this->_value = 0;
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int n)
 {
-    std::cout << "Int constructor" << std::endl;
+    std::cout << "Int constructor called" << std::endl;
     this->_value = n << this->_bits;
 }
 
 Fixed::Fixed(const Fixed &copy)
 {
-    std::cout << "Copy constructor" << std::endl;
+    std::cout << "Copy constructor called" << std::endl;
     this->_value = copy._value;
 }
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function" << std::endl;
+    std::cout << "getRawBits member function called" << std::endl;
     return (this->_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    std::cout << "setRawBits member function" << std::endl;
+    std::cout << "setRawBits member function called" << std::endl;
     this->_value = raw;
 }
 
 Fixed::Fixed(const float n)
 {
-    std::cout << "Float constructor" << std::endl;
+    std::cout << "Float constructor called" << std::endl;
     this->_value = roundf(n * (1 << this->_bits));
 }
 
@@ -65,7 +65,7 @@ int Fixed::toInt(void) const
 
 Fixed &Fixed::operator=(const Fixed &copy)
 {
-    std::cout << "Assignation operator" << std::endl;
+    std::cout << "Copy assigment operator called" << std::endl;
     this->_value = copy._value;
     return (*this);
 }
@@ -120,30 +120,30 @@ bool Fixed::operator!=(const Fixed &copy) const
     return (this->toFloat() != copy.toFloat());
 }
 
-float Fixed::operator++(int)
+Fixed &Fixed::operator++(void)
 {
-    float tmp = this->toFloat();
     this->_value++;
+    return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp(*this);
+    operator++();
     return (tmp);
 }
 
-float Fixed::operator++()
+Fixed &Fixed::operator--(void)
 {
-    this->_value++;
-    return (this->toFloat());
+    this->_value--;
+    return (*this);
 }
 
-float Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
-    float tmp = this->toFloat();
-    this->_value--;
+    Fixed tmp(*this);
+    operator--();
     return (tmp);
-}
-
-float Fixed::operator--()
-{
-    this->_value--;
-    return (this->toFloat());
 }
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)

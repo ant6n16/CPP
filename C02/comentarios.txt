@@ -1,0 +1,24 @@
+Revisar si hay que compilar con g++, con clang o con qué
+
+ex00: El operador de asignación por copia devuelve una referencia al objeto actual return (*this)
+El objeto que se va a copiar se pasa por referencia para no crear una copia absurda pero en modo const
+para que no se modifique
+
+ex01: En a = Fixed( 1234.4321f ) se crea un objeto temporal que luego se asigna a "a" y entonces se
+destruye, por eso llama al destructor. En números como 42.42, cuando lo imprime aparece 42.4219. Estos 
+decimales extra aparecen por el error de precisión del formato float. El Fixed &operator=(const Fixed &copy);
+se mete dentro de la clase porque va a asignar valores y puede necesitar acceder a miembros privados, el otro operador
+(<<) se deja fuera porque solo es para enviar datos al flujo de salida. El anterior empieza por Fixed y este empieza
+por std, esto puede ser la pista
+
+ex02: En todos los operadores se pasa primero a float porque al convertir los valores a float, te aseguras de que 
+las operaciones aritméticas se realicen con la precisión adecuada para números fraccionarios. Además, evitas 
+manejar manualmente el punto fijo.
+•	Devuelves Fixed (por valor) cuando necesitas devolver un nuevo objeto o una copia del estado previo.
+•	Devuelves Fixed& (por referencia) cuando quieres que los cambios en el objeto sean visibles fuera del método y
+posiblemente encadenar operaciones sobre el mismo objeto.
+
+
+
+
+

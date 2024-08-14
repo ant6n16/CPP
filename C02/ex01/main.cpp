@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 20:01:55 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 15:44:30 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:09:01 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,16 @@ int main()
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;
     std::cout << "d is " << d << std::endl;
+    
     std::cout << "a is " << a.toInt() << " as integer" << std::endl;
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+    
+    // std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+    // std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+    // std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+    // std::cout << "d is " << d.toFloat() << " as float" << std::endl;
     
     return 0; 
 }

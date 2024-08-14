@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:06:41 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 19:01:14 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:24:25 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ class Fixed
         bool operator==(const Fixed &copy) const;
         bool operator!=(const Fixed &copy) const;
         
-        float operator++(int);
-        float operator++();
-        float operator--(int);
-        float operator--();
+        Fixed&	operator++( void );
+		Fixed	operator++( int );
+		Fixed&	operator--( void );
+		Fixed	operator--( int );
         
         int getRawBits(void) const;
         void setRawBits(int const raw);
