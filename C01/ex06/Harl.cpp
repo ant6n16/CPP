@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 12:12:19 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/13 19:35:11 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/15 13:19:28 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,37 +40,30 @@ void	Harl::error(void)
 	std::cout << ERROR << std::endl;
 }
 
-void Harl::complain(std::string level)
+void	Harl::complain(std::string level)
 {
-    std::map<std::string, void (Harl::*)()> functionMap;
-    functionMap["DEBUG"] = &Harl::debug;
-    functionMap["ERROR"] = &Harl::error;
-    functionMap["WARNING"] = &Harl::warning;
-    functionMap["INFO"] = &Harl::info;
+    int i;
+    
+	std::string	instruction[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void	(Harl::*execute[4])() = \
+    {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    std::map<std::string, void (Harl::*)()>::iterator it = functionMap.find(level);
-    if (it != functionMap.end()) 
-        (this->*(it->second))();
-    else 
-        std::cerr << "Error: Wrong level\n";
+	for (i = 0; i < 4;  i++)
+		if (instruction[i].compare(level) == 0)
+			(this->*execute[i])();
 }
 
-void Harl::filterLevel(std::string levelFilter) 
+void		Harl::filterLevel(std::string levelFilter)
 {
-    std::map<std::string, int> levelMap;
-    levelMap["DEBUG"] = 0;
-    levelMap["INFO"] = 1;
-    levelMap["WARNING"] = 2;
-    levelMap["ERROR"] = 3;
-
-    std::map<std::string, int>::iterator it = levelMap.find(levelFilter);
-    if (it == levelMap.end())
-	{
-        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-        return ;
-    }
+    int i;
     
-    switch (it->second)
+	std::string	type[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (i = 0; i < 4;  i++)
+		if (type[i].compare(levelFilter) == 0)
+			break;
+            
+    switch (i)
 	{
         case 0:
             this->complain("DEBUG");
