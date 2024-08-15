@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:35:45 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/13 19:36:06 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/15 13:14:12 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,15 @@ void	Harl::error(void)
 	std::cout << ERROR << std::endl;
 }
 
-void Harl::complain(std::string level)
+void	Harl::complain(std::string level)
 {
-    std::map<std::string, void (Harl::*)()> functionMap;
-    functionMap["DEBUG"] = &Harl::debug;
-    functionMap["ERROR"] = &Harl::error;
-    functionMap["WARNING"] = &Harl::warning;
-    functionMap["INFO"] = &Harl::info;
+    int i;
+    
+	std::string	instructions[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void	(Harl::*execute[4])() = \
+    {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    std::map<std::string, void (Harl::*)()>::iterator it = functionMap.find(level);
-    if (it != functionMap.end()) 
-        (this->*(it->second))();
-    else 
-        std::cerr << "Error: Wrong level\n";
+	for (i = 0; i < 4;  i++)
+		if (instructions[i].compare(level) == 0)
+			(this->*execute[i])();
 }

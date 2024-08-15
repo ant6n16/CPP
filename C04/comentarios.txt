@@ -1,0 +1,19 @@
+ex00: Es importante declarar destructores como virtual en clases base cuando estás 
+trabajando con polimorfismo, para asegurar que se llamen correctamente los 
+destructores de las clases derivadas cuando se destruye un objeto a través de 
+un puntero de la clase base.
+•	virtual permite que un método sea sobreescrito en una clase derivada.
+•	Habilita el polimorfismo en C++, permitiendo que el comportamiento se determine 
+en tiempo de ejecución en lugar de en tiempo de compilación.
+
+En las clases que heredan no hay que marcar nada como virtual, ya lo es por haberlo puesto
+en la clase padre
+
+
+
+
+
+
+
+
+leaks: leaks --atExit -- ./Animal
