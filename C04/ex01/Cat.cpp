@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:35:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 20:38:45 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/15 20:39:54 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat() : Animal("Cat")
     std::cout << "Default cat constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &src)
+Cat::Cat(Cat const &src) : Animal(src)
 {
     this->_brain = new Brain(*src._brain);
     this->_type = src._type;

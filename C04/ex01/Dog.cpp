@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:32:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 20:38:58 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/15 20:40:07 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() : Animal("Dog")
     std::cout << "Default dog constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &src)
+Dog::Dog(Dog const &src) : Animal(src)
 {
     this->_brain = new Brain(*src._brain);
     this->_type = src._type;
