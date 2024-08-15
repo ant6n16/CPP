@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/14 14:44:58 by antdelga         ###   ########.fr       */
+/*   Created: 2024/08/14 15:00:27 by antdelga          #+#    #+#             */
+/*   Updated: 2024/08/15 12:43:08 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+
+class ScavTrap: public ClapTrap
 {
-    ClapTrap claptrap("ClapTrap");
-    // ClapTrap claptrap2(claptrap);
+	public:
+		ScavTrap();
+		ScavTrap(std::string constname);
+		ScavTrap(ScavTrap const &src);
+		~ScavTrap();
 
-    claptrap.attack("target");
-    claptrap.takeDamage(5);
-    claptrap.beRepaired(3);
+		ScavTrap &operator=(ScavTrap const &src);
+        
+		void	attack(const std::string &target);
+		void	guardGate();
+        
+	private:
+		bool _guarding_gate;
+};
 
-    // claptrap2.attack("target");
-    // claptrap2.takeDamage(5);
-    // claptrap2.beRepaired(3);
-
-    return (0);
-}
+#endif

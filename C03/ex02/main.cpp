@@ -5,24 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 20:01:55 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 19:08:13 by antdelga         ###   ########.fr       */
+/*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
+/*   Updated: 2024/08/15 12:59:21 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "FlagTrap.hpp"
 
-int main() 
-{ 
-    Fixed a;
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+int main()
+{
+	ScavTrap	a;
+	FlagTrap	b("Antonio");
+	ClapTrap	c("Pedro");
+
+    std::cout << std::endl;
+    a.attack("Juan");
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+	b.highFivesGuys();
+    std::cout << std::endl;
     
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-    return 0; 
+    std::cout << std::endl;
+	b.beRepaired(3);
+    std::cout << std::endl;
+    
+    std::cout << std::endl;
+	b.attack("Juan");
+	a.attack("Juan");
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+    a.guardGate();
+    a.attack("Juan");
+    std::cout << std::endl;
+
+    return (0);
 }

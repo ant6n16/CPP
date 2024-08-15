@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:10:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/14 14:21:14 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/08/14 20:16:49 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap
         void	takeDamage(unsigned int amount);
         void	beRepaired(unsigned int amount);
 
-    private:
+    protected:
 
         std::string	_name;
         int			_hit_points;

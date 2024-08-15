@@ -1,0 +1,9 @@
+ex00: Para inicializar los valores: 
+•	Inicialización Directa: Los miembros de datos se inicializan antes de que el constructor entre en su cuerpo. Esto es más eficiente y evita una segunda inicialización.
+•	Inicialización de Constantes y Referencias: Si tienes miembros const o reference, solo pueden ser inicializados mediante la lista de inicialización.
+•	Preferido para Clases Base: En la herencia, la lista de inicialización se utiliza para inicializar la clase base antes de que la clase derivada entre en su cuerpo de constructor.
+
+
+ex01: Cuando hay herencia en una clase no se crean dos objetos, solo se crea el ScavTrap pero el constructor del ClapTrap crea
+toda la parte de objeto ClapTrap y el constructor del ScavTrap crea su parte, pero lo que hay en memoria al final
+es un objeto ScavTrap

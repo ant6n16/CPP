@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/14 14:44:58 by antdelga         ###   ########.fr       */
+/*   Created: 2024/08/15 12:41:11 by antdelga          #+#    #+#             */
+/*   Updated: 2024/08/15 12:48:53 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FLAGTRAP_HPP
+# define FLAGTRAP_HPP
+
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main()
+class FlagTrap : public ClapTrap
 {
-    ClapTrap claptrap("ClapTrap");
-    // ClapTrap claptrap2(claptrap);
+    public:
+        FlagTrap();
+        FlagTrap(std::string name);
+        FlagTrap(FlagTrap const &src);
+        ~FlagTrap();
 
-    claptrap.attack("target");
-    claptrap.takeDamage(5);
-    claptrap.beRepaired(3);
+        FlagTrap &operator=(FlagTrap const &src);
 
-    // claptrap2.attack("target");
-    // claptrap2.takeDamage(5);
-    // claptrap2.beRepaired(3);
+        void    highFivesGuys(void);
+};
 
-    return (0);
-}
+#endif

@@ -5,30 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 20:01:55 by antdelga          #+#    #+#             */
-/*   Updated: 2024/04/27 15:44:30 by antdelga         ###   ########.fr       */
+/*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
+/*   Updated: 2024/08/15 12:37:57 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
 
-int main() 
+int main()
 {
-    Fixed a;
-    Fixed const b( 10 ); 
-    Fixed const c( 42.42f ); 
-    Fixed const d( b );
+	ScavTrap	a;
+	ScavTrap	b("Antonio");
+	ClapTrap	c("Pedro");
+
+    std::cout << std::endl;
+    a.attack("Juan");
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+	b.takeDamage(10000000);
+    std::cout << std::endl;
     
-    a = Fixed( 1234.4321f );
+    std::cout << std::endl;
+	b.beRepaired(3);
+    std::cout << std::endl;
     
-    std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
-    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-    
-    return 0; 
+    std::cout << std::endl;
+	b.attack("Juan");
+	a.attack("Juan");
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+    b.guardGate();
+    a.guardGate();
+    a.attack("Juan");
+    std::cout << std::endl;
+
+    return (0);
 }
