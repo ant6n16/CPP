@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:10:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/14 14:21:14 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:40:01 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ class ClapTrap
         void	attack(std::string const &target);
         void	takeDamage(unsigned int amount);
         void	beRepaired(unsigned int amount);
+
+        std::string		getName() const;
+        int	getHitPoints() const;
+        int	getEnergyPoints() const;
+        int	getAttackDamage() const;
 
     private:
 

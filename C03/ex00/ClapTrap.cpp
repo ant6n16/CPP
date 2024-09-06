@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:18:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 12:34:59 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/06 11:40:12 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("ClapTrap"), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(): _name("default"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
     std::cout << "ClapTrap " << this->_name << " is born !" << std::endl;
 }
@@ -100,3 +100,24 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << this->_name << " is repaired of " << amount << " points!" << std::endl;
     }
 }
+
+std::string ClapTrap::getName() const
+{
+    return (this->_name);
+}
+
+int ClapTrap::getHitPoints() const
+{
+    return (this->_hit_points);
+}
+
+int ClapTrap::getEnergyPoints() const
+{
+    return (this->_energy_points);
+}
+
+int ClapTrap::getAttackDamage() const
+{
+    return (this->_attack_damage);
+}
+

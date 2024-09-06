@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+         #
+#    By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 12:57:09 by antdelga          #+#    #+#              #
-#    Updated: 2024/04/27 19:43:32 by antdelga         ###   ########.fr        #
+#    Updated: 2024/09/06 11:42:38 by antdelga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ClapTrap
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-CC = g++
+CC = c++
 SRC = ClapTrap.cpp main.cpp
 OBJS := $(SRC:.cpp=.o)
 
