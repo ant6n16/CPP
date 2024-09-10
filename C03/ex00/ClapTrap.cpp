@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:18:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/06 11:40:12 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:28:56 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-ClapTrap::ClapTrap(): _name("default"), _hit_points(10), _energy_points(10), _attack_damage(0)
-{
-    std::cout << "ClapTrap " << this->_name << " is born !" << std::endl;
-}
-
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
@@ -37,12 +31,12 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &src)
 {
     if (this != &src)
     {
+        std::cout << "ClapTrap " << this->_name << " values assigned from " << src._name << std::endl;
         this->_name = src._name;
         this->_hit_points = src._hit_points;
         this->_energy_points = src._energy_points;
         this->_attack_damage = src._attack_damage;
     }
-    std::cout << "ClapTrap " << this->_name << " values assigned from" << src._name << std::endl;
     return (*this);
 }
 

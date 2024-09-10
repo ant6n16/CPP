@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:10:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/06 11:40:01 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:26:38 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class ClapTrap
 {
     public:
-        ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(ClapTrap const &src);
         ~ClapTrap();
