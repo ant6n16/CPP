@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+         #
+#    By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 12:57:09 by antdelga          #+#    #+#              #
-#    Updated: 2024/09/06 11:42:49 by antdelga         ###   ########.fr        #
+#    Updated: 2024/09/10 13:03:40 by antdelga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FlagTrap
+NAME = FragTrap
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 CC = c++
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FlagTrap.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 OBJS := $(SRC:.cpp=.o)
 
 all: $(NAME)

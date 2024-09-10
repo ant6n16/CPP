@@ -6,16 +6,16 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 12:59:21 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:03:29 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
 	ScavTrap	a;
-	FlagTrap	b("Antonio");
+	FragTrap	b("Antonio");
 	ClapTrap	c("Pedro");
 
     std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:00:20 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 12:50:25 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:00:36 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &src)
     if (this != &src)
     {
         ClapTrap::operator=(src);
+        std::cout << "ScavTrap " << this->_name << "values assigned from" << src._name << "ClapTrap" << std::endl;
         this->_guarding_gate = src._guarding_gate;
     }
-    std::cout << "ScavTrap " << this->_name << "values assigned from" << src._name << "ClapTrap" << std::endl;
     return (*this);
 }
 
@@ -69,6 +69,7 @@ void ScavTrap::attack(std::string const &target)
         std::cout << "ScavTrap " << this->_name << " left guarding the gate and attack " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
         this->_guarding_gate = false;
         this->_energy_points -= 1;
+        return ;
     }
     this->_energy_points -= 1;
     std::cout << "ScavTrap " << this->_name << " attack " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
@@ -87,8 +88,5 @@ void ScavTrap::guardGate()
         std::cout << "ScavTrap " << this->_name << " is now guarding the gate!" << std::endl;
     }
     else
-    {
-        this->_guarding_gate = false;
-        std::cout << "ScavTrap " << this->_name << " is no longer guarding the gate!" << std::endl;
-    }
+        std::cout << "ScavTrap " << this->_name << " is already guarding the gate!" << std::endl;
 }
