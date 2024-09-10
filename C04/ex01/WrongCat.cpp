@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:53:13 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 14:05:09 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:49:14 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat")
 
 WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 {
-    std::cout << "WrongCat of type " << type << " constructor called" << std::endl;
+    std::cout << "WrongCat constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(WrongCat const &src)
 {
     *this = src;
-    std::cout << "WrongCat " << src.getType() << " copy constructor called" << std::endl;
+    std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat()
@@ -37,7 +37,7 @@ WrongCat &WrongCat::operator=(WrongCat const &src)
 {
     if (this != &src)
         this->_type = src.getType();
-    std::cout << "WrongCat " << this->getType() << " assignation operator called" << std::endl;
+    std::cout << "WrongCat assignation operator called" << std::endl;
     return *this;
 }
 

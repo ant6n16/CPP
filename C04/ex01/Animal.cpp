@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:25:55 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 13:52:31 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:47:36 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Animal &Animal::operator=(Animal const &src)
 {
     if (this != &src)
         this->_type = src._type;
-    std::cout << "Animal " << this->_type << " assignation operator called" << std::endl;
+    std::cout << "Animal assignation operator called" << std::endl;
     return *this;
 }
 

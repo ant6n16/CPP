@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:32:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 13:47:13 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:38:21 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(Dog const &src)
 {
     *this = src;
-    std::cout << "Dog " << src.getType() << " copy constructor called" << std::endl;
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog()
@@ -30,7 +30,7 @@ Dog::~Dog()
 
 Dog &Dog::operator=(Dog const &src)
 {
-    std::cout << "Dog " << this->getType() << " assignation operator called" << std::endl;
+    std::cout << "Dog assignation operator called" << std::endl;
     this->_type = src.getType();
     return *this;
 }

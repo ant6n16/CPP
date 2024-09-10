@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:50:40 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 13:52:03 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:48:44 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ WrongAnimal::WrongAnimal(std::string type) : _type(type)
 WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
     *this = src;
-    std::cout << "Animal " << src._type << " copy constructor called" << std::endl;
+    std::cout << "WrongAnimal " << src._type << " copy constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()

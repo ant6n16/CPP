@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:35:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 20:39:54 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:28:32 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 Cat::Cat() : Animal("Cat")
 {
-    this->_brain = new Brain();
+    try
+    {
+        this->_brain = new Brain();
+    }
+    catch (std::bad_alloc &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     std::cout << "Default cat constructor called" << std::endl;
 }
 
@@ -22,7 +29,7 @@ Cat::Cat(Cat const &src) : Animal(src)
 {
     this->_brain = new Brain(*src._brain);
     this->_type = src._type;
-    std::cout << "Cat " << src.getType() << " copy constructor called" << std::endl;
+    std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat::~Cat()
@@ -40,7 +47,7 @@ Cat &Cat::operator=(Cat const &src)
         delete this->_brain;
         this->_brain = new Brain(*src._brain);
     }
-    std::cout << "Cat assignation operator called" << std::endl;
+    std::cout << "Cat assignment operator called" << std::endl;
     return *this;
 }
 
@@ -58,5 +65,3 @@ std::string Cat::getIdea(int index) const
 {
     return this->_brain->getIdea(index);
 }
-
-

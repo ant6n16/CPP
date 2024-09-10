@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:53:00 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 13:53:11 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:49:00 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal
         WrongCat();
         WrongCat(std::string type);
         WrongCat(WrongCat const &src);
-        virtual ~WrongCat();
+        ~WrongCat();
 
         WrongCat &operator=(WrongCat const &src);
 

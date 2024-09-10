@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:53:13 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 14:05:09 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:43:15 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 WrongCat::WrongCat(WrongCat const &src)
 {
     *this = src;
-    std::cout << "WrongCat " << src.getType() << " copy constructor called" << std::endl;
+    std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat()
