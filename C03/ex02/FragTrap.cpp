@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:41:13 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 13:03:01 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:20:14 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,10 @@ FragTrap &FragTrap::operator=(FragTrap const &src)
 
 void    FragTrap::highFivesGuys(void)
 {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "FragTrap " << this->_name << " is dead!" << std::endl;
+        return ;
+    }
     std::cout << "FragTrap " << this->_name << " wants a high five!" << std::endl;
 }
