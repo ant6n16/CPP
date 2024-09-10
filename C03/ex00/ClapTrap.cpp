@@ -6,11 +6,16 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:18:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 11:28:56 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:22:09 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(): _name("Default"), _hit_points(10), _energy_points(10), _attack_damage(0)
+{
+    std::cout << "ClapTrap " << this->_name << " is born !" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {

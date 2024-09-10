@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:42:57 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 11:29:19 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:28:51 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,20 @@ int main()
     }
     {
         std::cout << std::endl;
-        ClapTrap claptrap("Manolo");
-        ClapTrap claptrap2(claptrap);
-        ClapTrap claptrap3("Pepe");
+        ClapTrap claptrap;
+        ClapTrap claptrap2("Manolo");
+        ClapTrap claptrap3(claptrap2);
+        ClapTrap claptrap4("Pepe");
 
         std::cout << "Name: " << claptrap.getName() << std::endl;
         std::cout << "Name: " << claptrap2.getName() << std::endl;
         std::cout << "Name: " << claptrap3.getName() << std::endl;
-        claptrap3 = claptrap;
-        std::cout << "New name: " << claptrap3.getName() << std::endl;
+        std::cout << "Name: " << claptrap4.getName() << std::endl << std::endl;
+
+        claptrap = claptrap2;
+        claptrap3 = claptrap4;
+        std::cout << "New name: " << claptrap.getName() << std::endl;
+        std::cout << "New name 3: " << claptrap3.getName() << std::endl;
     }
     return (0);
 }

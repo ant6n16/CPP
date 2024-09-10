@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:18:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/06 12:39:35 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:21:51 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("ClapTrap"), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(): _name("Default"), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
     std::cout << "ClapTrap " << this->_name << " is born !" << std::endl;
 }
-
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
@@ -35,6 +34,7 @@ ClapTrap::ClapTrap(ClapTrap const &src): _name(src._name), _hit_points(src._hit_
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &src)
 {
+    std::cout << "ClapTrap " << this->_name << " values assigned from " << src._name << std::endl;
     if (this != &src)
     {
         this->_name = src._name;
@@ -42,7 +42,6 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &src)
         this->_energy_points = src._energy_points;
         this->_attack_damage = src._attack_damage;
     }
-    std::cout << "ClapTrap " << this->_name << " values assigned from" << src._name << std::endl;
     return (*this);
 }
 
