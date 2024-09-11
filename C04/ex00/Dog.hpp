@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:32:01 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 13:34:33 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:28:11 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ class Dog : public Animal
 {
     public:
         Dog();
-        Dog(Dog const &src);
         ~Dog();
 
-        Dog &operator=(Dog const &src);
-
         void makeSound() const;
+
+    private:
+        Dog(Dog const &src);
+        Dog &operator=(Dog const &src);
 };
 
 #endif

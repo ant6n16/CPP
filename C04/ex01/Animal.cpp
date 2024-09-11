@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:25:55 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 13:47:36 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:23:15 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ Animal::Animal(std::string type) : _type(type)
     std::cout << "Animal of type " << type << " constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &src)
+Animal::Animal(const Animal &copy): _type(copy._type)
 {
-    *this = src;
-    std::cout << "Animal " << src._type << " copy constructor called" << std::endl;
+    std::cout << "Animal copy constructor called" << std::endl;
 }
 
 Animal::~Animal()
@@ -48,5 +47,10 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-    std::cout << "Animal makes a sound" << std::endl;
+    if (this->_type == "Dog")
+        std::cout << "Dog is barking" << std::endl;
+    else if (this->_type == "Cat")
+        std::cout << "Cat is meowing" << std::endl;
+    else
+        std::cout << "Animal makes an appropiate sound" << std::endl;
 }

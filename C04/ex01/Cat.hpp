@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:34:11 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 19:56:45 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:48:37 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Cat : public Animal
         ~Cat();
 
         Cat &operator=(Cat const &src);
-
         void makeSound() const;
+
         void setIdea(int index, std::string idea);
         std::string getIdea(int index) const;
 

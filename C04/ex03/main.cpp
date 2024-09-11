@@ -5,36 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 13:24:12 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/11 12:10:12 by antdelga         ###   ########.fr       */
+/*   Created: 2024/09/11 14:56:05 by antdelga          #+#    #+#             */
+/*   Updated: 2024/09/11 14:57:05 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-    // //Daria error por instanciar clase abstracta:
-	// const Animal *meta = new Animal();
-	// delete meta;
-    
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	
-    std::cout << std::endl;
-    
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-    
-	i->makeSound();
-	j->makeSound();
+	ICharacter* me = new Character("me");
 
-	delete j;
-	delete i;
-    return 0;
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	ICharacter* bob = new Character("bob");
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+
+	return 0;
 }

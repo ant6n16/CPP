@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:21:11 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 19:55:11 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:05:44 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ Brain::Brain()
 
 Brain::Brain(Brain const &src)
 {
-    *this = src;
+    for (int i = 0; i < 100; ++i) 
+    {
+        _ideas[i] = src._ideas[i];
+    }
     std::cout << "Brain copy constructor called" << std::endl;
 }
 
@@ -43,6 +46,8 @@ void Brain::setIdea(int index, std::string idea)
 {
     if (index >= 0 && index < 100)
         this->_ideas[index] = idea;
+    else
+        std::cout << "Index out of range" << std::endl;
 }
 
 std::string Brain::getIdea(int index) const

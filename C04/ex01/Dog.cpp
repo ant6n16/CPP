@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:32:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 13:48:14 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:49:13 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,14 @@ Dog &Dog::operator=(Dog const &src)
 void Dog::makeSound() const
 {
     std::cout << "Dog is barking" << std::endl;
+}
+
+void Dog::setIdea(int index, std::string idea)
+{
+    this->_brain->setIdea(index, idea);
+}
+
+std::string Dog::getIdea(int index) const
+{
+    return this->_brain->getIdea(index);
 }

@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:35:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 14:28:32 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:48:48 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 Cat::Cat() : Animal("Cat")
 {
-    try
-    {
-        this->_brain = new Brain();
-    }
-    catch (std::bad_alloc &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    std::cout << "Default cat constructor called" << std::endl;
+    this->_brain = new Brain();
+    std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &src) : Animal(src)

@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:20:26 by antdelga          #+#    #+#             */
-/*   Updated: 2024/08/15 19:55:25 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:05:18 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Brain
 
     private:
             std::string _ideas[100];
-
 };
 
 #endif

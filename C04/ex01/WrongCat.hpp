@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:53:00 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/10 13:49:00 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:01:53 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class WrongCat : public WrongAnimal
 {
     public:
         WrongCat();
-        WrongCat(std::string type);
-        WrongCat(WrongCat const &src);
         ~WrongCat();
 
-        WrongCat &operator=(WrongCat const &src);
-
         void makeSound() const;
+
+    private:
+        WrongCat(WrongCat const &src);
+        WrongCat &operator=(WrongCat const &src);
 };
 
 #endif

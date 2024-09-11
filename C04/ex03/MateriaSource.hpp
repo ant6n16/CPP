@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 13:34:11 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/11 12:06:01 by antdelga         ###   ########.fr       */
+/*   Created: 2024/09/11 14:54:43 by antdelga          #+#    #+#             */
+/*   Updated: 2024/09/11 14:54:55 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+# include "IMateriaSource.hpp"
 
-class Cat : public Animal
+class MateriaSource : public IMateriaSource
 {
     public:
-        Cat();
-        Cat(Cat const &src);
-        ~Cat();
+        MateriaSource();
+        MateriaSource(MateriaSource const &src);
+        ~MateriaSource();
 
-        Cat &operator=(Cat const &src);
+        MateriaSource &operator=(MateriaSource const &src);
 
-        void makeSound() const;
-        void setIdea(int index, std::string idea);
-        std::string getIdea(int index) const;
+        void learnMateria(AMateria *m);
+        AMateria *createMateria(std::string const &type);
 
     private:
-        Brain *_brain;
+        AMateria *_materias[4];
 };
 
 #endif
