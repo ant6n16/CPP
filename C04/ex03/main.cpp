@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:56:05 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/11 14:57:05 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:06:43 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int main()
 
 	me->use(0, *bob);
 	me->use(1, *bob);
-	me->use(2, *bob);
-	me->use(3, *bob);
+	// me->use(2, *bob);
+	// me->use(3, *bob);
 
 	delete bob;
 	delete me;

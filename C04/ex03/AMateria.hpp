@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:13:38 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/11 12:14:30 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:04:36 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define AMATERIA_HPP
 
 # include <iostream>
+# include "ICharacter.hpp"
 
 class ICharacter;
 
