@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 22:55:25 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 01:04:48 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:21:20 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,6 @@ int main()
             {
                 f1.beSigned(b2);
                 std::cout << f1 << std::endl;
-                f1.beSigned(b2);
-                // b2.signForm(f1);
-                std::cout << f1 << std::endl;
 
             }
             catch(const std::exception& e)
@@ -86,11 +83,10 @@ int main()
             std::cout << f1 << std::endl;
             try
             {
-                f1.beSigned(b1);
+                b2.signForm(f1);
                 std::cout << f1 << std::endl;
-                f1.beSigned(b2);
+                b1.signForm(f1);
                 std::cout << f1 << std::endl;
-
             }
             catch(const std::exception& e)
             {

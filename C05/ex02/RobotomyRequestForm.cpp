@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 00:55:42 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 12:51:52 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:43:19 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", 72, 45), _target("Default Target")
 {
@@ -30,12 +31,12 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &src)
 {
-    if (this != &src)
+    if (this != &src) 
     {
         AForm::operator=(src);
-        this->_target = src._target;
+        _target = src._target;
     }
-    return *this;
+    return (*this);
 }
 
 std::string RobotomyRequestForm::getTarget() const

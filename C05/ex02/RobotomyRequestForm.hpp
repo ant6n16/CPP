@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 00:55:11 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 00:55:23 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:43:25 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include "AForm.hpp"
+
 
 class RobotomyRequestForm : public AForm
 {
@@ -27,7 +29,7 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm(RobotomyRequestForm const &src);
         ~RobotomyRequestForm();
 
-        RobotomyRequestForm &operator=(RobotomyRequestForm const &src);
+        RobotomyRequestForm &operator=(RobotomyRequestForm const &equal);
 
         std::string getTarget() const;
         void execute(Bureaucrat const &executor) const;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 00:58:22 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 12:37:46 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:59:08 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     else
     {
         std::cout << "ShrubberyCreationForm executed by " << executor.getName() << std::endl;
-        std::ofstream file((this->getTarget() + "_shrubbery"));
+        std::ofstream file((this->getTarget() + "_shrubbery").c_str());
         if (file.is_open())
         {
             file << "      /\\      " << std::endl;

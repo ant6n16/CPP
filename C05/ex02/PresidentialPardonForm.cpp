@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 00:40:36 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 12:32:28 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:36:53 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 }
 
-PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &src)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &equal)
 {
-    if (this != &src)
+    if (this != &equal) 
     {
-        AForm::operator=(src);
-        this->_target = src._target;
+        AForm::operator=(equal);
+        _target = equal._target;
     }
-    return *this;
+    return (*this);
 }
 
 std::string PresidentialPardonForm::getTarget() const

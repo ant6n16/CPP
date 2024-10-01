@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:24:18 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 12:25:27 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:37:34 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ AForm::~AForm()
 AForm &AForm::operator=(AForm const &src)
 {
     if (this != &src)
+    {
         this->_signed = src._signed;
+        this->_signGrade = src._signGrade;
+        this->_execGrade = src._execGrade;
+    }
     return *this;
 }
 
@@ -77,7 +81,10 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
     if (this->_signed)
         throw AForm::FormAlreadySignedException();
     else if (bureaucrat.getGrade() > _signGrade)
+    {
+        std::cout << bureaucrat.getName() << " couldnt sign Form " << this->getName() << " because ";
         throw Bureaucrat::GradeTooLowException();
+    }
     this->_signed = true;
     std::cout << bureaucrat.getName() << " signs " << _name << std::endl;
 }
