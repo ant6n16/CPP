@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 22:55:25 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/07 15:03:35 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:59:52 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@ int main()
         Bureaucrat b4("Antoine", 1);
         Bureaucrat b5("Hola");
         
+        std::cout << b5 << std::endl;
         b5 = b4;
         std::cout << b5 << std::endl;
         b5.incrementGrade();
-        std::cout << b5 << std::endl;
     }
     catch(const std::exception& e)
     {

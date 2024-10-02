@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 22:47:27 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/07 15:12:40 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:59:42 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
 {
     if (this != &src)
+    {
+        this->_name = src.getName();
         this->_grade = src.getGrade();
+    }
     return *this;
 }
 

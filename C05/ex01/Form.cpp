@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:24:18 by antdelga          #+#    #+#             */
-/*   Updated: 2024/10/01 19:27:20 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:16:57 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ Form &Form::operator=(Form const &src)
 {
     if (this != &src)
     {
+        this->_name = src._name;
         this->_signed = src._signed;
         this->_signGrade = src._signGrade;
         this->_execGrade = src._execGrade;
@@ -80,10 +81,9 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (this->_signed)
         throw Form::FormAlreadySignedException();
-    else if (bureaucrat.getGrade() > _signGrade)
+    else if (bureaucrat.getGrade() > this->_signGrade) 
     {
-        std::cout << bureaucrat.getName() << " couldnt sign Form " << this->getName() << " because ";
-        throw Bureaucrat::GradeTooLowException();
+        throw Form::GradeTooLowException();
     }
     this->_signed = true;
     std::cout << bureaucrat.getName() << " signs " << _name << std::endl;

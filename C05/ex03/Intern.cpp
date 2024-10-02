@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 15:02:56 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/08 15:19:07 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:41:34 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ Intern::Intern()
 {
 }
 
-Intern::Intern(Intern const &src)
+Intern::Intern(Intern const &src) 
 {
-    (void)src;
+    *this = src;  
 }
 
-Intern::~Intern()
+Intern::~Intern() 
 {
 }
 
-Intern &Intern::operator=(Intern const &src)
+Intern &Intern::operator=(Intern const &src) 
 {
-    (void)src;
+    (void)src;    
     return *this;
 }
 

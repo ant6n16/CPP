@@ -6,7 +6,7 @@
 /*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 22:55:25 by antdelga          #+#    #+#             */
-/*   Updated: 2024/10/01 19:51:41 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:33:54 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main()
             Bureaucrat b1("Pedro", 30);
             PresidentialPardonForm f1("Mar");
             RobotomyRequestForm f2("Sanidad");
-            ShrubberyCreationForm f3("Home");
+            ShrubberyCreationForm f3("Garden");
             std::cout << f1 << std::endl;
             std::cout << f2 << std::endl;
             std::cout << f3 << std::endl << std::endl << std::endl;

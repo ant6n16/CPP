@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antdelga <antdelga@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: antdelga <antdelga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 22:47:27 by antdelga          #+#    #+#             */
-/*   Updated: 2024/09/07 18:44:37 by antdelga         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:15:28 by antdelga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
 {
     if (this != &src)
+    {
+        this->_name = src.getName();
         this->_grade = src.getGrade();
+    }
     return *this;
 }
 
@@ -77,15 +80,17 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(Form &form) 
 {
-    try
+    try 
     {
         form.beSigned(*this);
-    }
-    catch(const std::exception& e)
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    } 
+    catch (const std::exception &e) 
     {
-        std::cerr << e.what() << '\n';
+        std::cout << this->getName() << " couldn't sign " << form.getName() 
+                  << " because " << e.what() << std::endl;
     }
 }
 
